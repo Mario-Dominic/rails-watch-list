@@ -2,13 +2,17 @@
 
 <ul>
   <% @bookmarks.each do |bookmark| %>
+    <%= image_tag(bookmark.movie.poster_url, alt: "Poster for #{bookmark.movie.title}", style: "width: 100px; height: auto;") %>
     <li><%= bookmark.movie.title%></li>
     <li><%= bookmark.movie.overview%></li>
     <li><%= bookmark.movie.rating%></li>
     <li><%= bookmark.comment%></li>
     <%= link_to "Delete",
       bookmark_path(bookmark),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      data: {
+        turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+      }
     %>
   <% end %>
 </ul>
