@@ -1,21 +1,21 @@
-<h1><%= @list.name%> - Bookmarks</h1>
+<h1><%= @list.name %> - Bookmarks</h1>
 
 <ul>
   <% @bookmarks.each do |bookmark| %>
-    <%= image_tag(bookmark.movie.poster_url, alt: "Poster for #{bookmark.movie.title}", style: "width: 100px; height: auto;") %>
-    <li><%= bookmark.movie.title%></li>
-    <li><%= bookmark.movie.overview%></li>
-    <li><%= bookmark.movie.rating%></li>
-    <li><%= bookmark.comment%></li>
-    <%= link_to "Delete",
-      bookmark_path(bookmark),
-      data: {
-        turbo_method: :delete,
-      turbo_confirm: "Are you sure?"
-      }
-    %>
+    <li>
+      <%= image_tag(bookmark.movie.poster_url, alt: "Poster for #{bookmark.movie.title}", style: "width: 100px; height: auto;") %>
+    </li>
+    <li><%= bookmark.movie.title %></li>
+    <li><%= bookmark.movie.overview %></li>
+    <li><%= bookmark.movie.rating %></li>
+    <li><%= bookmark.comment %></li>
+    <li>
+      <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      <%#= button_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
+
+    </li>
   <% end %>
 </ul>
 
-
+<%= link_to 'Create a Bookmark', new_list_bookmark_path(@list) %>
 <%= link_to 'Back to List', lists_path %>

@@ -1,0 +1,10 @@
+<h1>Edit List</h1>
+
+<%= simple_form_for @list, url: list_path(@list), method: :put do |f| %>
+  <%= f.input :name %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit, value: "Save Changes" %>
+
+<% end %>
+ <%#= link_to "🗑️", @list,
+                    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
