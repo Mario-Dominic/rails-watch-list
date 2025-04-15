@@ -1,0 +1,21 @@
+
+    <%#= simple_form_for [List.first, Bookmark.new], url: list_bookmarks_path(List.first), method: :post do |f| %>
+      <%#= f.hidden_field :movie_id, value: @movie.id %>
+      <%#= f.input :list_id, collection: List.all, prompt: "Select a list" %>
+      <%#= f.input :comment, placeholder: "Add a comment" %>
+      <%#= f.submit "Add to List" %>
+    <%# <% end %>
+
+
+
+
+<div class="movie-card">
+  <div class="custom-card-image">
+    <%= image_tag(@movie.poster_url, alt: "Poster for #{@movie.title}", class: "custom-card-img") %>
+  </div>
+  <div class="custom-card-body">
+    <h5 class="custom-card-title", style= "color: white;"><%= @movie.title %></h5>
+    <p class="custom-card-rating", style="color: white;"><small><%= @movie.rating %></small></p>
+    <p class="custom-card-overview", style= "color: white;"><%= @movie.overview %></p>
+  </div>
+</div>

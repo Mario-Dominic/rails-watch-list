@@ -1,0 +1,26 @@
+<div class="card bg-dark text-white text-center">
+  <img src="https://res.cloudinary.com/dzep3mgew/image/upload/v1744655698/vecteezy_empty-red-theater-seats-await-moviegoers-in-a-dimly-lit_50116899_m20tsz.jpg" class="card-img" alt="cinematic image">
+  <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center">
+    <h1 class="card-title">Save any kind of movies</h1>
+    <p class="card-text">Have fun custom creating movie lists!</p>
+  </div>
+</div>
+
+<h3 class="text-center">Movies</h3>
+
+<div class="all-movies-wrapper">
+  <% @movies.each do |movie| %>
+    <div class="card-movies-container">
+      <% if movie.poster_url.present? %>
+        <div class="movies-card">
+          <%= link_to movie_path(movie) do %>
+            <%= image_tag(movie.poster_url, alt: "Poster for #{movie.title}", style: "width: 200px; height: auto;") %>
+          <% end %>
+        </div>
+      <% else %>
+        <%= link_to movie.title, movie_path(movie) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
