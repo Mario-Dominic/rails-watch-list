@@ -1,12 +1,14 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar {
+  background-color: rgb(17, 17, 17) !important;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+form.d-flex button.btn-outline-success {
+  background-color: #626262;  /* Change to a blue background (or any color you prefer) */
+  color: white;  /* Change the text color to white */
+  border: none;  /* Optional: Remove the default border */
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+form.d-flex button.btn-outline-success:hover {
+  background-color: #626262;  /* Change background color on hover */
+  border-color: #626262;  /* Change border color on hover */
 }
